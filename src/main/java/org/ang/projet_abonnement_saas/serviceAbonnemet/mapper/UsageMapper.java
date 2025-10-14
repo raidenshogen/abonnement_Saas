@@ -1,0 +1,14 @@
+package org.ang.projet_abonnement_saas.serviceAbonnemet.mapper;
+
+import org.ang.projet_abonnement_saas.serviceAbonnemet.domain.dto.UsageReadDto;
+import org.ang.projet_abonnement_saas.serviceAbonnemet.domain.entity.Usage;
+import org.mapstruct.*;
+
+@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)public interface UsageMapper {
+    Usage toEntity(UsageReadDto usageReadDto);
+
+    UsageReadDto toDto(Usage usage);
+
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    Usage partialUpdate(UsageReadDto usageReadDto, @MappingTarget Usage usage);
+}
