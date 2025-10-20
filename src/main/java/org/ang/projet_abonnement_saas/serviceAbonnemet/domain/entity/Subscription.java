@@ -39,25 +39,15 @@ public class Subscription implements Serializable {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
-    public int getUser_id() {
-        return user_id;
-    }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
+
 
     public int getPlan_id() {
         return plan_id;
     }
 
-    public void setPlan_id(int plan_id) {
-        this.plan_id = plan_id;
-    }
+
 
     public Date getStart_date() {
         return start_date;
@@ -87,9 +77,6 @@ public class Subscription implements Serializable {
         return created_at;
     }
 
-    public void setCreated_at(Date created_at) {
-        this.created_at = created_at;
-    }
 
     public List<Plan> getPlans() {
         return plans;
