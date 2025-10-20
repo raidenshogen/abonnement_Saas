@@ -1,5 +1,6 @@
 package org.ang.projet_abonnement_saas.serviceAbonnemet.service.Implimentation;
 
+import org.ang.projet_abonnement_saas.serviceAbonnemet.domain.entity.Status;
 import org.ang.projet_abonnement_saas.serviceAbonnemet.domain.entity.Subscription;
 import org.ang.projet_abonnement_saas.serviceAbonnemet.repository.SubscriptionRepository;
 import org.ang.projet_abonnement_saas.serviceAbonnemet.service.SubscriptionService;
@@ -23,8 +24,8 @@ public class SubscriptionServiceImp implements SubscriptionService {
 @Override
     public Subscription UpdateSubscriptionStatus(Subscription subscription){
         Subscription sub = subscriptionRepo.findById(subscription.getId()).orElse(null);
-        subscription.setStatut(sub.getStatut());
-        return subscriptionRepo.save(sub);
+       if(sub != null)subscription.setStatut(sub.getStatut());
+       return subscriptionRepo.save(sub);
     }
 @Override
     public void CancalSubscription(Subscription subscription){

@@ -16,6 +16,7 @@ public class Subscription implements Serializable {
     private int plan_id;
     private Date start_date;
     private Date end_date;
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Status statut;
     private Date created_at;
