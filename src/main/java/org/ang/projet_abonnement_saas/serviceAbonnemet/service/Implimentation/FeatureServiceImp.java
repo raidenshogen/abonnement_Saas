@@ -8,6 +8,7 @@ import org.ang.projet_abonnement_saas.serviceAbonnemet.service.FeatureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -72,7 +73,7 @@ public class FeatureServiceImp implements FeatureService {
 
     @Override
     public List<Feature> getFeaturesByPlan(Plan plan) {
-        return featureRepo.findFeaturesByPlan(plan);
+        return featureRepo.findFeaturesByPlans(Arrays.asList(plan));
     }
 
     @Override

@@ -42,7 +42,7 @@ public class UsageServiceImp implements UsageService {
 
     @Override
     public List<Usage> getUsageBySubscription(int subscriptionId) {
-        return usageRepo.findBySubscription_id(subscriptionId);
+        return usageRepo.findBySubscriptionId(subscriptionId);
     }
 
     @Override
@@ -60,13 +60,13 @@ public class UsageServiceImp implements UsageService {
 
     @Override
     public Double getTotalUsage(int subscriptionId, int featureId) {
-        List<Usage> usages = usageRepo.findBySubscription_idAndFeature_id(subscriptionId, featureId);
+        List<Usage> usages = usageRepo.findBySubscriptionIdAndFeatureId(subscriptionId, featureId);
         return usages.stream().mapToDouble(Usage::getUsed_value).sum();
     }
 
     @Override
     public void resetUsage(int subscriptionId, int featureId) {
-        List<Usage> usages = usageRepo.findBySubscription_idAndFeature_id(subscriptionId, featureId);
+        List<Usage> usages = usageRepo.findBySubscriptionIdAndFeatureId(subscriptionId, featureId);
         usageRepo.deleteAll(usages);
     }
 

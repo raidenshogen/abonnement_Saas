@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface FeatureRepository extends JpaRepository<Feature, Integer> {
-    List<Feature> findFeaturesByPlan(Plan plan);
+    List<Feature> findFeaturesByPlans(List<Plan> list);
 }

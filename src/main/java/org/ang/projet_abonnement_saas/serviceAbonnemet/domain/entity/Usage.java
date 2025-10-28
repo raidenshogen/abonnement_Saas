@@ -7,31 +7,32 @@ import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
+@Table(name = "usage_table")
 public class Usage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int subscription_id;
-    private int feature_id;
+    private int subscriptionId;
+    private int featureId;
     private int used_value;
     private LocalDate recorded_at;
     public Usage() {
 
     }
     public Usage(int subscription_id, int id, int feature_id, int used_value, LocalDate recorded_at) {
-        this.subscription_id = subscription_id;
+        this.subscriptionId = subscription_id;
         this.id = id;
-        this.feature_id = feature_id;
+        this.featureId = feature_id;
         this.used_value = used_value;
         this.recorded_at = recorded_at;
     }
 
     public int getSubscription_id() {
-        return subscription_id;
+        return subscriptionId;
     }
 
     public void setSubscription_id(int subscription_id) {
-        this.subscription_id = subscription_id;
+        this.subscriptionId = subscription_id;
     }
 
     public int getId() {
@@ -43,11 +44,11 @@ public class Usage {
     }
 
     public int getFeature_id() {
-        return feature_id;
+        return featureId;
     }
 
     public void setFeature_id(int feature_id) {
-        this.feature_id = feature_id;
+        this.featureId = feature_id;
     }
 
     public int getUsed_value() {

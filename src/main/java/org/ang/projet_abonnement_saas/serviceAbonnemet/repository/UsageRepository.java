@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface UsageRepository extends JpaRepository<Usage, Integer> {
-    List<Usage> findBySubscription_id(int featureId);
-    List<Usage> findBySubscription_idAndFeature_id(int subscriptionId,int featureId);
+    List<Usage> findBySubscriptionId(int subscriptionId);
+    List<Usage> findBySubscriptionIdAndFeatureId(int subscriptionId,int featureId);
 }
