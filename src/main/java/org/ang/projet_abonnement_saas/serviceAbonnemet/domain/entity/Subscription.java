@@ -39,9 +39,9 @@ public class Subscription implements Serializable {
         return id;
     }
 
-
-
-
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getPlan_id() {
         return plan_id;
