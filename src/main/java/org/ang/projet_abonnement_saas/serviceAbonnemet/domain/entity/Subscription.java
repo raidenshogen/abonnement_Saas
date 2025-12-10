@@ -1,88 +1,42 @@
 package org.ang.projet_abonnement_saas.serviceAbonnemet.domain.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.Date;
-import java.util.List;
+import java.util.UUID;
 
 @Entity
+@Data
 public class Subscription implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int user_id;
-    private int plan_id;
-    private Date start_date;
-    private Date end_date;
+    private String userId;
+    private LocalDate start_date;
+    private LocalDate end_date;
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Status statut;
-    private Date created_at;
+    private LocalDate created_at;
 
     public Subscription() {
 
     }
 
-    public Subscription(Status statut, int id, int user_id, int plan_id, Date start_date, Date end_date, Date created_at) {
-        this.statut = statut;
-        this.id = id;
-        this.user_id = user_id;
-        this.plan_id = plan_id;
+    public Subscription(String userId,LocalDate start_date, LocalDate end_date,Plan p) {
+        this.statut = Status.active;
+        this.userId = userId;
         this.start_date = start_date;
         this.end_date = end_date;
-        this.created_at = created_at;
+        this.created_at = LocalDate.now();
+        this.plan = p;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getPlan_id() {
-        return plan_id;
-    }
-
-
-
-    public Date getStart_date() {
-        return start_date;
-    }
-
-    public void setStart_date(Date start_date) {
-        this.start_date = start_date;
-    }
-
-    public Date getEnd_date() {
-        return end_date;
-    }
-
-    public void setEnd_date(Date end_date) {
-        this.end_date = end_date;
-    }
-
-    public Status getStatut() {
-        return statut;
-    }
-
-    public void setStatut(Status statut) {
-        this.statut = statut;
-    }
-
-    public Date getCreated_at() {
-        return created_at;
-    }
-
-
-    public List<Plan> getPlans() {
-        return plans;
-    }
-
-    @OneToMany(mappedBy = "subscription")
-    private List<Plan> plans =new ArrayList<Plan>();
+    @OneToOne
+    @JoinColumn(name = "plan_id")
+    private Plan plan;
 
 }

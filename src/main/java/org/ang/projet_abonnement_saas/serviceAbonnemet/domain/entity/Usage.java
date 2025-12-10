@@ -13,16 +13,14 @@ public class Usage {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int subscriptionId;
-    private int featureId;
     private int used_value;
     private LocalDate recorded_at;
     public Usage() {
 
     }
-    public Usage(int subscription_id, int id, int feature_id, int used_value, LocalDate recorded_at) {
+    public Usage(int subscription_id, int id,  int used_value, LocalDate recorded_at) {
         this.subscriptionId = subscription_id;
         this.id = id;
-        this.featureId = feature_id;
         this.used_value = used_value;
         this.recorded_at = recorded_at;
     }
@@ -43,13 +41,8 @@ public class Usage {
         this.id = id;
     }
 
-    public int getFeature_id() {
-        return featureId;
-    }
 
-    public void setFeature_id(int feature_id) {
-        this.featureId = feature_id;
-    }
+
 
     public int getUsed_value() {
         return used_value;
@@ -66,13 +59,10 @@ public class Usage {
     public void setRecorded_at(LocalDate recorded_at) {
         this.recorded_at = recorded_at;
     }
+    @lombok.Getter
     @OneToOne
-    @JoinColumn(name="usage_id")
+    @JoinColumn(name="feature_id")
     private Feature feature;
-
-    public Feature getFeature() {
-        return feature;
-    }
 
     public void setFeature(Feature feature) {
         this.feature = feature;

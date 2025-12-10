@@ -1,12 +1,14 @@
 package org.ang.projet_abonnement_saas.serviceAbonnemet.mapper;
 
+import org.ang.projet_abonnement_saas.serviceAbonnemet.domain.dto.FeatureCUDto;
 import org.ang.projet_abonnement_saas.serviceAbonnemet.domain.dto.FeatureReadDto;
 import org.ang.projet_abonnement_saas.serviceAbonnemet.domain.entity.Feature;
 import org.ang.projet_abonnement_saas.serviceAbonnemet.domain.entity.Usage;
 import org.mapstruct.*;
 
-@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)public interface FeatureMapper {
-    Feature toEntity(FeatureReadDto featureReadDto);
+@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)
+public interface FeatureMapper {
+    Feature toEntity(FeatureCUDto Dto);
 
     @AfterMapping
     default void linkUsage(@MappingTarget Feature feature) {
@@ -19,5 +21,5 @@ import org.mapstruct.*;
     FeatureReadDto toDto(Feature feature);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    Feature partialUpdate(FeatureReadDto featureReadDto, @MappingTarget Feature feature);
+    Feature partialUpdate(FeatureCUDto featureCUDto, @MappingTarget Feature feature);
 }

@@ -17,24 +17,23 @@ import java.util.List;
 public class UsageServiceImp implements UsageService {
     @Autowired
     private UsageRepository usageRepo;
-     @Autowired
-     private SubscriptionRepository subscriptionRepo;
-     @Autowired
-     private FeatureRepository featureRepo;
+    @Autowired
+    private SubscriptionRepository subscriptionRepo;
+    @Autowired
+    private FeatureRepository featureRepo;
 
-        @Override
+    @Override
     public Usage recodUsage(int subscriptionId, int featureId, int usedValue) {
-        Subscription sub=subscriptionRepo.findById(subscriptionId).orElse(null);
-        Feature ft=featureRepo.findById(featureId).orElse(null);
-        if(sub==null){
+        Subscription sub = subscriptionRepo.findById(subscriptionId).orElse(null);
+        Feature ft = featureRepo.findById(featureId).orElse(null);
+        if (sub == null) {
             throw new RuntimeException("Subscription Not Found");
         }
-        if(ft==null){
+        if (ft == null) {
             throw new RuntimeException("Feature Not Found");
         }
-        Usage usage=new Usage();
+        Usage usage = new Usage();
         usage.setSubscription_id(sub.getId());
-        usage.setFeature_id(ft.getId());
         usage.setUsed_value(usedValue);
         usage.setRecorded_at(LocalDate.now());
         return usageRepo.save(usage);
@@ -52,7 +51,7 @@ public class UsageServiceImp implements UsageService {
             throw new IllegalArgumentException("Feature not found");
         }
 
-        double limit = feature.getLimit();
+        double limit = feature.getFeatureLimit();
         double totalUsed = getTotalUsage(subscriptionId, featureId);
 
         return totalUsed >= limit;
@@ -77,7 +76,7 @@ public class UsageServiceImp implements UsageService {
             throw new IllegalArgumentException("Feature not found");
         }
 
-        double limit = feature.getLimit();
+        double limit = feature.getFeatureLimit();
         double totalUsed = getTotalUsage(subscriptionId, featureId);
 
         return Math.max(0, limit - totalUsed);

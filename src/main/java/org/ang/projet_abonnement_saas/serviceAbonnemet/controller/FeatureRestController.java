@@ -46,7 +46,7 @@ public class FeatureRestController {
     @GetMapping("/plan/{planId}")
     public ResponseEntity<List<Feature>> getFeaturesByPlan(@PathVariable int planId) {
         Plan plan = new Plan();
-        plan.setId(planId);
+
         List<Feature> features = featureService.getFeaturesByPlan(plan);
         return ResponseEntity.ok(features);
     }

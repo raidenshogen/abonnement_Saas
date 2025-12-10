@@ -1,6 +1,7 @@
 package org.ang.projet_abonnement_saas.serviceAbonnemet.domain.entity;
 
 import jakarta.persistence.*;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -12,17 +13,11 @@ public class Feature {
     private String name;
     private String description;
     private String type;
-    private int limit;
+    @Setter
+    private double featureLimit;
 
     public Feature() {
 
-    }
-    public Feature(int id, String name, String description, String type, int limit) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.type = type;
-        this.limit = limit;
     }
 
     public String getName() {
@@ -35,10 +30,6 @@ public class Feature {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getDescription() {
@@ -57,29 +48,15 @@ public class Feature {
         this.type = type;
     }
 
-    public int getLimit() {
-        return limit;
+    public double getFeatureLimit() {
+        return featureLimit;
     }
 
-    public void setLimit(int limit) {
-        this.limit = limit;
-    }
-    @ManyToMany
-    @JoinTable(
-            name = "feature_plan",
-            joinColumns = @JoinColumn(name = "plan_id"),
-            inverseJoinColumns = @JoinColumn(name = "feature_id")
-    )
-    private List<Plan> plans;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "plan_id")
+    private Plan plan;
 
-    public List<Plan> getPlans() {
-        return plans;
-    }
-
-    public void setPlans(List<Plan> plans) {
-        this.plans = plans;
-    }
-    @OneToOne(mappedBy = "feature",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "feature", cascade = CascadeType.ALL)
     private Usage usage;
 
     public Usage getUsage() {
@@ -89,5 +66,12 @@ public class Feature {
     public void setUsage(Usage usage) {
         this.usage = usage;
     }
-}
 
+    public void setPlan(Plan plan) {
+        this.plan = plan;
+    }
+
+    public Plan getPlan() {
+        return plan;
+    }
+}

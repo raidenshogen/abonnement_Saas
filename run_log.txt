@@ -1,0 +1,93 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.ang:Projet_Abonnement_Saas >-------------------
+[INFO] Building Projet_Abonnement_Saas 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.5.6:run (default-cli) > test-compile @ Projet_Abonnement_Saas >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ Projet_Abonnement_Saas ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ Projet_Abonnement_Saas ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ Projet_Abonnement_Saas ---
+[INFO] skip non existing resourceDirectory C:\Users\hp\IdeaProjects\Project_Saas\projet_Abonnement_Saas\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ Projet_Abonnement_Saas ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot:3.5.6:run (default-cli) < test-compile @ Projet_Abonnement_Saas <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.5.6:run (default-cli) @ Projet_Abonnement_Saas ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.6)
+
+2025-11-30T01:37:37.536+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] o.a.p.ProjetAbonnementSaasApplication    : Starting ProjetAbonnementSaasApplication using Java 23.0.1 with PID 24580 (C:\Users\hp\IdeaProjects\Project_Saas\projet_Abonnement_Saas\target\classes started by ZEO in C:\Users\hp\IdeaProjects\Project_Saas\projet_Abonnement_Saas)
+2025-11-30T01:37:37.541+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] o.a.p.ProjetAbonnementSaasApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-11-30T01:37:37.732+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-11-30T01:37:37.733+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/Project_abonnements_Saas/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-11-30T01:37:37.733+01:00  WARN 24580 --- [Project_abonnements_Saas] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServerConfigDataResource@41de5768 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/Project_abonnements_Saas/default": Connection refused: getsockopt
+2025-11-30T01:37:37.734+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-11-30T01:37:37.734+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/Project_abonnements_Saas/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-11-30T01:37:37.735+01:00  WARN 24580 --- [Project_abonnements_Saas] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServerConfigDataResource@3fc08eec uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/Project_abonnements_Saas/default": Connection refused: getsockopt
+2025-11-30T01:37:37.735+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-11-30T01:37:37.735+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/Project_abonnements_Saas/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-11-30T01:37:37.736+01:00  WARN 24580 --- [Project_abonnements_Saas] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServerConfigDataResource@5cad8b7d uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/Project_abonnements_Saas/default": Connection refused: getsockopt
+2025-11-30T01:37:41.072+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-30T01:37:41.512+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 420 ms. Found 4 JPA repository interfaces.
+2025-11-30T01:37:42.002+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b6bd07bf-5298-3f94-86fc-05c7a6689ca8
+2025-11-30T01:37:43.526+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-11-30T01:37:43.604+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-30T01:37:43.605+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-30T01:37:43.982+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-30T01:37:43.984+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6240 ms
+2025-11-30T01:37:45.273+01:00  WARN 24580 --- [Project_abonnements_Saas] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flyway' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flyway' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Failed to instantiate [org.flywaydb.core.Flyway]: Factory method 'flyway' threw exception with message: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine a suitable driver class
+2025-11-30T01:37:45.298+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-11-30T01:37:45.417+01:00  INFO 24580 --- [Project_abonnements_Saas] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-11-30T01:37:45.524+01:00 ERROR 24580 --- [Project_abonnements_Saas] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  27.558 s
+[INFO] Finished at: 2025-11-30T01:37:45+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.5.6:run (default-cli) on project Projet_Abonnement_Saas: Process terminated with exit code: 1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

@@ -15,15 +15,15 @@ public class PlanCUDto implements Serializable {
     private final plans plan;
     private final String description;
     private final BigDecimal price;
-    private final Date duration;
+
     private final List<Integer> featureIds;
     private final int subscriptionId;
 
-    public PlanCUDto(plans plan, String description, BigDecimal price, Date duration, List<Integer> featureIds, int subscriptionId) {
+    public PlanCUDto(plans plan, String description, BigDecimal price,  List<Integer> featureIds, int subscriptionId) {
         this.plan = plan;
         this.description = description;
         this.price = price;
-        this.duration = duration;
+
         this.featureIds = featureIds;
         this.subscriptionId = subscriptionId;
     }
@@ -40,9 +40,6 @@ public class PlanCUDto implements Serializable {
         return price;
     }
 
-    public Date getDuration() {
-        return duration;
-    }
 
     public List<Integer> getFeatureIds() {
         return featureIds;
@@ -60,14 +57,13 @@ public class PlanCUDto implements Serializable {
         return Objects.equals(this.plan, entity.plan) &&
                 Objects.equals(this.description, entity.description) &&
                 Objects.equals(this.price, entity.price) &&
-                Objects.equals(this.duration, entity.duration) &&
                 Objects.equals(this.featureIds, entity.featureIds) &&
                 Objects.equals(this.subscriptionId, entity.subscriptionId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(plan, description, price, duration, featureIds, subscriptionId);
+        return Objects.hash(plan, description, price, featureIds, subscriptionId);
     }
 
     @Override
@@ -76,7 +72,6 @@ public class PlanCUDto implements Serializable {
                 "plan = " + plan + ", " +
                 "description = " + description + ", " +
                 "price = " + price + ", " +
-                "duration = " + duration + ", " +
                 "featureIds = " + featureIds + ", " +
                 "subscriptionId = " + subscriptionId + ")";
     }

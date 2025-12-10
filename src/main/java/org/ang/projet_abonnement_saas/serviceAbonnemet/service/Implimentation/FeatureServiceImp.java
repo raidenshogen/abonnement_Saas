@@ -5,29 +5,28 @@ import org.ang.projet_abonnement_saas.serviceAbonnemet.domain.entity.Plan;
 import org.ang.projet_abonnement_saas.serviceAbonnemet.repository.FeatureRepository;
 import org.ang.projet_abonnement_saas.serviceAbonnemet.repository.PlanRepository;
 import org.ang.projet_abonnement_saas.serviceAbonnemet.service.FeatureService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Service
 public class FeatureServiceImp implements FeatureService {
-    @Autowired
+
     FeatureRepository featureRepo;
-    @Autowired
+
     PlanRepository planRepo;
+
     @Override
     public Feature addFeatureToPlan(int featureId, int planId) {
-        Plan p=planRepo.findById(planId).orElse(null);
+        Plan p = planRepo.findById(planId).orElse(null);
         Feature f = featureRepo.findById(featureId).get();
         if (p == null) {
             throw new RuntimeException("Plan not found with ID: " + planId);
         }
-        if (f == null) {
-            throw new RuntimeException("Feature not found with ID: " + featureId);
-        }
-        List<Feature> featureList=p.getFeatures();
+
+
         List<Feature> features = p.getFeatures();
         if (!features.contains(f)) {
             features.add(f);
@@ -38,15 +37,13 @@ public class FeatureServiceImp implements FeatureService {
     }
 
     @Override
-    public void removeFeatureFromPlan(int featureId,int planId) {
-        Plan p=planRepo.findById(planId).orElse(null);
+    public void removeFeatureFromPlan(int featureId, int planId) {
+        Plan p = planRepo.findById(planId).orElse(null);
         Feature f = featureRepo.findById(featureId).get();
         if (p == null) {
             throw new RuntimeException("Plan not found with ID: " + planId);
         }
-        if (f == null) {
-            throw new RuntimeException("Feature not found with ID: " + featureId);
-        }
+
 
         List<Feature> features = p.getFeatures();
         if (!features.contains(f)) {
@@ -63,17 +60,21 @@ public class FeatureServiceImp implements FeatureService {
         if (f != null) {
             f.setDescription(feature.getDescription());
             f.setName(feature.getName());
-            f.setPlans(feature.getPlans());
+            f.setPlan(feature.getPlan());
             f.setType(feature.getType());
-            f.setLimit(feature.getLimit());
+            f.setFeatureLimit(feature.getFeatureLimit());
 
         }
+        assert f != null;
         return featureRepo.save(f);
     }
 
     @Override
     public List<Feature> getFeaturesByPlan(Plan plan) {
-        return featureRepo.findFeaturesByPlans(Arrays.asList(plan));
+        if (plan == null || plan.getPlan() == null) {
+            return Collections.emptyList();
+        }
+        return featureRepo.findFeaturesByPlanTypes(List.of(plan.getPlan()));
     }
 
     @Override

@@ -1,5 +1,7 @@
 package org.ang.projet_abonnement_saas.serviceAbonnemet.domain.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.ang.projet_abonnement_saas.serviceAbonnemet.domain.entity.plans;
 
 import java.io.Serializable;
@@ -11,75 +13,15 @@ import java.util.Objects;
 /**
  * DTO for {@link org.ang.projet_abonnement_saas.serviceAbonnemet.domain.entity.Plan}
  */
+@Data
+@AllArgsConstructor
 public class PlanReadDto implements Serializable {
-    private final int id;
-    private final plans plan;
-    private final String description;
-    private final BigDecimal price;
-    private final Date duration;
-    private final List<FeatureDto> features;
+    private  int id;
+    private  plans planType;
+    private String description;
+    private BigDecimal price;
+    private List<FeatureReadDto> features;
 
-    public PlanReadDto(int id, plans plan, String description, BigDecimal price, Date duration, List<FeatureDto> features) {
-        this.id = id;
-        this.plan = plan;
-        this.description = description;
-        this.price = price;
-        this.duration = duration;
-        this.features = features;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public plans getPlan() {
-        return plan;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public Date getDuration() {
-        return duration;
-    }
-
-    public List<FeatureDto> getFeatures() {
-        return features;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PlanReadDto entity = (PlanReadDto) o;
-        return Objects.equals(this.id, entity.id) &&
-                Objects.equals(this.plan, entity.plan) &&
-                Objects.equals(this.description, entity.description) &&
-                Objects.equals(this.price, entity.price) &&
-                Objects.equals(this.duration, entity.duration) &&
-                Objects.equals(this.features, entity.features);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, plan, description, price, duration, features);
-    }
-
-    @Override
-    public String toString() {
-        return getClass().getSimpleName() + "(" +
-                "id = " + id + ", " +
-                "plan = " + plan + ", " +
-                "description = " + description + ", " +
-                "price = " + price + ", " +
-                "duration = " + duration + ", " +
-                "features = " + features + ")";
-    }
 
     /**
      * DTO for {@link org.ang.projet_abonnement_saas.serviceAbonnemet.domain.entity.Feature}

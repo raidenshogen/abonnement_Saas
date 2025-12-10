@@ -1,0 +1,51 @@
+﻿[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.ang:Projet_Abonnement_Saas:jar:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.scope' for org.projectlombok:lombok:jar must be one of [provided, compile, runtime, test, system] but is 'annotationProcessor'. @ line 101, column 20
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------------< org.ang:Projet_Abonnement_Saas >-------------------
+[INFO] Building Projet_Abonnement_Saas 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ Projet_Abonnement_Saas ---
+[INFO] Deleting C:\Users\hp\IdeaProjects\Project_Saas\projet_Abonnement_Saas\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ Projet_Abonnement_Saas ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ Projet_Abonnement_Saas ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 37 source files with javac [debug release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/hp/IdeaProjects/Project_Saas/projet_Abonnement_Saas/src/main/java/org/ang/projet_abonnement_saas/serviceAbonnemet/service/Implimentation/SubscriptionServiceImp.java:[36,41] cannot find symbol
+  symbol:   method getClientId(java.util.UUID)
+  location: variable clientFeignRequest of type org.ang.projet_abonnement_saas.serviceAbonnemet.openfeign.ClientFeignRequest
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  30.309 s
+[INFO] Finished at: 2025-11-30T00:58:04+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project Projet_Abonnement_Saas: Compilation failure
+[ERROR] /C:/Users/hp/IdeaProjects/Project_Saas/projet_Abonnement_Saas/src/main/java/org/ang/projet_abonnement_saas/serviceAbonnemet/service/Implimentation/SubscriptionServiceImp.java:[36,41] cannot find symbol
+[ERROR]   symbol:   method getClientId(java.util.UUID)
+[ERROR]   location: variable clientFeignRequest of type org.ang.projet_abonnement_saas.serviceAbonnemet.openfeign.ClientFeignRequest
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
