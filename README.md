@@ -78,7 +78,7 @@ Do **not** add REST endpoints for the UI, and do **not** call another service's 
 
 ## 3. Tech stack
 
-- Java `<version>`, Spring Boot `<version>`
+- Java `17`, Spring Boot `3.5.6`
 - Spring for GraphQL (UI-facing API)
 - gRPC (service-to-service) with Protobuf
 - Apache Kafka (events)
