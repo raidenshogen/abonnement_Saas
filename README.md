@@ -237,8 +237,8 @@ Contracts are in `contracts/src/main/proto`. **If you change a `.proto`, only ad
 ## 8. Running the project
 
 ### Prerequisites
-- JDK `<version>`
-- Maven or Gradle `<version>`
+- JDK `17`
+- Maven `4.0.0`
 - Docker and Docker Compose
 
 ### Start everything
@@ -308,7 +308,7 @@ All tests must pass before you open a pull request.
 
 ## 12. Working on the project (conventions)
 
-1. Create a branch from `main`: `feature/<short-name>`.
+1. Create a branch from `master`: `feature/<short-name>`.
 2. Keep to the three communication rules (section 2).
 3. New table or column? Add a Flyway migration.
 4. New gRPC method? Update the `.proto` in `contracts`, rebuild, then implement.
